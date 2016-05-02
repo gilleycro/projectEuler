@@ -1,2 +1,2 @@
 # projectEuler
-random tasks from Euler project
+Solving random problems
