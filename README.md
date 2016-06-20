@@ -1,3 +1,2 @@
 # projectEuler
-Solving random problems
-/nAll problems are solved in Java
+Solving random problems,all problems are solved in Java
