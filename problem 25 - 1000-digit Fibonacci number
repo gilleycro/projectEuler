@@ -1,0 +1,96 @@
+/*  
+
+The Fibonacci sequence is defined by the recurrence relation:
+
+Fn = Fn−1 + Fn−2, where F1 = 1 and F2 = 1.
+Hence the first 12 terms will be:
+
+F1 = 1
+F2 = 1
+F3 = 2
+F4 = 3
+F5 = 5
+F6 = 8
+F7 = 13
+F8 = 21
+F9 = 34
+F10 = 55
+F11 = 89
+F12 = 144
+The 12th term, F12, is the first term to contain three digits.
+
+What is the index of the first term in the Fibonacci sequence to contain 1000 digits?
+
+
+*/
+
+//solved using Java language
+
+import java.math.BigInteger;
+
+/**
+ * Created by gilley on 8/18/16.
+ */
+public class Fibonacci1000 {
+
+
+
+    public static void main (String [] args){
+        long start = System.currentTimeMillis();
+        System.out.println("Index number is " + indexNumber());
+        long end = System.currentTimeMillis();
+
+        System.out.println((end-start)/1000);
+    }
+
+
+    public static BigInteger fibonnacci(BigInteger number, BigInteger previousNumber){
+
+        return number.add(previousNumber);
+    }
+
+
+    public static long indexNumber(){
+
+        BigInteger n = BigInteger.valueOf(0);
+        BigInteger n2 = BigInteger.valueOf(1);
+
+            BigInteger temp = BigInteger.valueOf(0).add(n2);
+
+
+            long index =1;
+
+        while(checkNumber(n2) != true) {
+
+
+            index++;
+            temp = BigInteger.valueOf(0).add(n2);
+            n2 = BigInteger.valueOf(0).add(fibonnacci(n2,n));
+            n = BigInteger.valueOf(0).add(temp);
+
+
+
+
+        }
+
+
+        return index;
+    }
+
+    public static boolean checkNumber(BigInteger number){
+
+        String s = String.valueOf( number);
+
+
+        if(s.length()<1000)
+            return false;
+        else
+            return true;
+
+
+    }
+
+}
+
+
+
